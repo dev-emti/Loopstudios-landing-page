@@ -1,1 +1,205 @@
-/*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,300;1,300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-family: "Alata", sans-serif;
+  background-color: hsl(0deg, 0%, 100%);
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.268);
+  background-image: url("./images/mobile/image-hero.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: min(800px, 100vh);
+}
+@media (min-width: 1200px) {
+  header {
+    background-image: url("./images/desktop/image-hero.jpg");
+    background-size: 100% 100%;
+    height: min(800px, 100vh);
+  }
+}
+header nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 75px;
+  width: 100%;
+}
+@media (min-width: 1200px) {
+  header nav {
+    max-width: 1200px;
+    position: relative;
+    margin-inline: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+header nav .logo {
+  width: 300px;
+  padding: 20px;
+  z-index: 10;
+}
+header nav button {
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url("./images/icon-hamburger.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30px;
+  width: 30px;
+  border: none;
+  position: absolute;
+  right: 1.5em;
+  top: 1.5em;
+  z-index: 1;
+}
+@media (min-width: 1200px) {
+  header nav button {
+    display: none;
+  }
+}
+header nav button[data-toggler=true] {
+  background-image: url("./images/icon-close.svg");
+}
+header nav .menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  gap: 20px;
+  background-color: hsl(0deg, 0%, 0%);
+  inset: 0;
+  height: 100vh;
+  font-size: 0.8em;
+}
+@media (min-width: 1200px) {
+  header nav .menu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    height: auto;
+    background-color: transparent;
+  }
+}
+header nav .menu[data-visible=true] {
+  display: flex;
+}
+header nav .menu .menu-items {
+  font-size: 2em;
+}
+header nav .menu .menu-items a {
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+}
+@media (min-width: 1200px) {
+  header nav .menu .menu-items a {
+    text-transform: capitalize;
+  }
+}
+header .hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+  color: hsl(0deg, 0%, 100%);
+  max-width: 1200px;
+  margin-inline: 20px;
+}
+@media (min-width: 1200px) {
+  header .hero {
+    justify-content: start;
+    margin-inline: auto;
+  }
+}
+header .hero .text-container {
+  border: 1px solid hsl(0deg, 0%, 100%);
+  padding: 20px;
+  width: 70vh;
+  height: auto;
+  overflow: hidden;
+}
+@media (min-width: 1200px) {
+  header .hero .text-container {
+    width: 750px;
+  }
+}
+header .hero .text-container h1 {
+  font-size: 2.5em;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  line-height: 1em;
+}
+@media (min-width: 1200px) {
+  header .hero .text-container h1 {
+    font-size: 5em;
+  }
+}
+
+main {
+  padding: 20px;
+  padding-block: 100px;
+  height: auto;
+}
+main #section-1 {
+  position: relative;
+  max-width: 1200px;
+  margin-inline: auto;
+  text-align: center;
+}
+@media (min-width: 1200px) {
+  main #section-1 {
+    text-align: start;
+  }
+}
+main #section-1 .img-container {
+  margin-bottom: 20px;
+  height: 100%;
+}
+@media (min-width: 1200px) {
+  main #section-1 .text-container {
+    position: absolute;
+    background-color: white;
+    padding: 40px 70px 0 70px;
+    width: 700px;
+    bottom: 4px;
+    right: 0;
+  }
+}
+main #section-1 .text-container h1 {
+  font-size: 2rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  margin-top: 20px;
+  color: hsl(0deg, 0%, 0%);
+}
+@media (min-width: 1200px) {
+  main #section-1 .text-container h1 {
+    font-size: 3rem;
+  }
+}
+main #section-1 .text-container p {
+  margin-top: 20px;
+  color: hsl(0deg, 0%, 55%);
+}/*# sourceMappingURL=style.css.map */

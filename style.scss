@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:ital,wght@0,300;1,300&display=swap');
+
+*{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+img{
+    max-width: 100%;
+}
+
+$clr-white: hsl(0, 0%, 100%);
+$clr-black: hsl(0, 0%, 0%);
+$clr-dark-gray: hsl(0, 0%, 55%);
+$clr-very-dark-gray: hsl(0, 0%, 41%);
+$spacing-default: 20px;
+$section-padding: 100px;
+
+$font-alata: 'Alata', sans-serif;
+$font-josefin: 'Josefin Sans', sans-serif;
+
+body{
+    font-family: $font-alata;
+    background-color: $clr-white;
+    overflow-x: hidden;
+}
+
+
+header{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.268);
+    background-image: url('./images/mobile/image-hero.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: min(800px, 100vh);
+    @media (min-width: 1200px) {
+        background-image: url('./images/desktop/image-hero.jpg');
+        background-size: 100% 100%;
+        height: min(800px, 100vh);
+    }
+    nav{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 75px;
+        width: 100%;
+        @media (min-width: 1200px) {
+            max-width: 1200px;
+            position: relative;
+            margin-inline: auto;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        .logo{
+            width: 300px;
+            padding: $spacing-default;
+            z-index: 10;
+        }
+
+        button{
+            cursor: pointer;
+            background-color: transparent;
+            background-image: url('./images/icon-hamburger.svg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 30px;
+            width: 30px;
+            border: none;
+            position: absolute;
+            right: 1.5em;
+            top: 1.5em;
+            z-index: 1;
+            @media (min-width: 1200px) {
+                display: none;
+            }
+            &[data-toggler="true"]{
+                background-image: url('./images/icon-close.svg');
+            }
+        }
+
+        .menu{
+            position: absolute;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            padding: $spacing-default;
+            gap: $spacing-default;
+            background-color: $clr-black;
+            inset: 0;
+            height: 100vh;
+            font-size: .8em;
+            @media (min-width: 1200px) {
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                justify-content: end;
+                height: auto;
+                background-color: transparent;   
+            }
+
+            &[data-visible="true"]{
+                display: flex;
+            }
+
+            .menu-items{
+                font-size: 2em;
+
+                a{
+                    text-decoration: none;
+                    color: $clr-white;
+                    font-family: $font-josefin;
+                    text-transform: uppercase;
+                    @media (min-width: 1200px) {
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+
+    .hero{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: inherit;
+        color: $clr-white;
+        max-width: 1200px;
+        margin-inline: $spacing-default;
+        @media (min-width: 1200px) {
+            justify-content: start;
+            margin-inline: auto;
+        }
+        .text-container{
+            border: 1px solid $clr-white;
+            padding: $spacing-default;
+            width: 70vh;
+            height: auto;
+            overflow: hidden;
+            @media (min-width: 1200px) {
+               width: 750px;
+            }
+            h1{
+                font-size: 2.5em;
+                font-family: $font-josefin;
+                text-transform: uppercase;
+                line-height: 1em;
+                @media (min-width: 1200px) {
+                    font-size: 5em;
+                }
+            }
+        }
+    }
+    
+}
+main{
+    padding: $spacing-default;
+    padding-block: $section-padding;
+   
+    height: auto;
+    #section-1{
+        position: relative;
+        max-width: 1200px;
+        margin-inline: auto;
+        text-align: center;
+        @media (min-width:1200px) {
+            text-align: start;
+        }
+        .img-container{
+            margin-bottom: $spacing-default;
+            height: 100%;
+            
+            @media (min-width:1200px) {
+            }
+        }
+        .text-container{
+            @media (min-width:1200px) {
+                position: absolute;
+                background-color: white;
+                padding: 40px 70px 0 70px;
+                width: 700px;
+                bottom: 4px;
+                right: 0;
+            }
+            h1{
+                font-size: 2rem;
+                font-family: $font-josefin;
+                text-transform: uppercase;
+                margin-top: $spacing-default;
+                color: $clr-black;
+                @media (min-width:1200px) {
+                    font-size: 3rem;
+                }
+            }
+            p{
+                margin-top: $spacing-default;
+                color: $clr-dark-gray;
+                @media (min-width:1200px) {
+                    
+                }
+            }
+        }
+       
+    }
+}
