@@ -371,4 +371,18 @@ footer .footer-container .right .copyright {
   .desktop {
     display: block;
   }
+}
+.attribution {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  padding: 10px 20px;
+}
+@media (min-width: 1200px) {
+  .attribution {
+    flex-direction: row;
+    gap: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */
